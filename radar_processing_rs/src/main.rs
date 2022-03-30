@@ -60,11 +60,11 @@ fn plot_channels(data: &(Vec<f64>, Vec<f64>), output: &str) -> Result<()> {
     let (ch1, ch2) = data;
 
     const SPEED_OF_LIGHT: f64 = 299792458.0; // [m / s]
-    const SLOPE: f64 = 2.0 * 1950037684072.2034; // [Hz / s]
+    const SLOPE: f64 = 1950037684072.2034; // [Hz / s]
     const FS: f64 = (6250000 / 2) as f64;
     const HALF: usize = 1601;
     let frequencies = poloto::range_iter([0.0, FS], HALF);
-    let distance: Vec<f64> = frequencies.map(|x: f64| (SPEED_OF_LIGHT * x) / SLOPE).take(LIMIT).collect();
+    let distance: Vec<f64> = frequencies.map(|x: f64| (SPEED_OF_LIGHT * x) / (2.0 * SLOPE)).take(LIMIT).collect();
 
     use poloto::build::line;
     let l1 = line("ch1", distance.iter().copied().zip(ch1.iter().copied()));
