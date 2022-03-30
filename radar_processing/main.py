@@ -15,29 +15,23 @@ def proc(prefix: str) -> (np.ndarray, np.ndarray):
     for i in range(0, 16):
         n = i + 1
         data[i] = scipy.io.loadmat(f"./data/{prefix}{n:02}.mat")["DATA_ORIGINAL"][1]
-    data = np.fft.fft(data)
+        data[i, 0:20] = np.repeat(-32768, 20) # clean the start data (changes nothing)
     averaged = np.average(data, axis=0)
+    averaged = np.fft.fft(averaged)
+    fft = np.absolute(averaged)[:1601]
 
-    fft = np.abs(averaged)
-    half = fft.shape[0] // 2
-    print(half)
-    plot.plot(fft)
-    plot.show()
-
-    return 20 * np.log10((2 / 50) * fft[0:half])
+    return 20 * np.log10((2 / 50) * fft)
 
 
 if __name__ == '__main__':
     with_object_frequencies = proc("donnees_")
     background_frequencies = proc("donnees_vide_")
-    with_object_frequencies = with_object_frequencies
-    background_frequencies = background_frequencies
 
     speed_of_light = 299792458  # [m / s]
     slope = 1950037684072.203400  # [Hz / s]
     Fs = 6250000
     half = with_object_frequencies.shape[0]
-    frequency = np.linspace(0, (Fs / 2), half)
+    frequency = np.linspace(0, (Fs // 2), half)
     distance = (speed_of_light * frequency) / (2 * slope)
 
     plot.plot(distance, with_object_frequencies)
@@ -48,4 +42,4 @@ if __name__ == '__main__':
 
     without_background = with_object_frequencies - background_frequencies
     plot.plot(distance[0:100], without_background[0:100])
-    plot.show()
+    plot.show(size=(30, 8))
