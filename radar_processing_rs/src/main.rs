@@ -52,7 +52,7 @@ fn average(data: Vec<Vec<i64>>) -> Vec<f64> {
 }
 
 fn subtract(left: &[f64], right: &[f64]) -> Vec<f64> {
-    left.iter().zip(right).map(|(a, b)| a - b).collect()
+    left.iter().zip(right).map(|(a, b)| (a - b).abs()).collect()
 }
 
 fn plot_channels(data: &(Vec<f64>, Vec<f64>), output: &str) -> Result<()> {

@@ -15,7 +15,6 @@ def proc(prefix: str) -> (np.ndarray, np.ndarray):
     for i in range(0, 16):
         n = i + 1
         data[i] = scipy.io.loadmat(f"./data/{prefix}{n:02}.mat")["DATA_ORIGINAL"][1]
-        data[i, 0:20] = np.repeat(-32768, 20) # clean the start data (changes nothing)
     averaged = np.average(data, axis=0)
     averaged = np.fft.fft(averaged)
     fft = np.absolute(averaged)[:1601]
@@ -40,6 +39,6 @@ if __name__ == '__main__':
     plot.plot(distance, background_frequencies)
     plot.show()
 
-    without_background = with_object_frequencies - background_frequencies
+    without_background = abs(with_object_frequencies - background_frequencies)
     plot.plot(distance[0:100], without_background[0:100])
     plot.show(size=(30, 8))
