@@ -3,5 +3,5 @@ name = 'experiment_report'
 bundle = 'https://data1.fullyjustified.net/tlextras-2020.0r0.tar'
 
 [[output]]
-name = 'default'
+name = 'Tokariev_radar_report'
 type = 'pdf'
