@@ -11,8 +11,7 @@
         \item Second reading: the authors are brilliant! (detect good ideas)
         \begin{enumerate}
             \item the authors had a strong motivation to perform this research: which one?
-            \item they established something successful in that direction that
-            \item constitutes the main contribution of the article: what exactly?
+            \item they established something successful in that direction that constitutes the main contribution of the article: what exactly?
             \item what makes them/you enthusiastic about this result?
         \end{enumerate}
         \item Third reading: the article has weaknesses! (scientific doubt)
@@ -74,7 +73,36 @@
 
     General ideas or thoughts:
     \begin{enumerate}
-        \item 
+        \item Reading 1: generally
+        \item the article is about design of microstrip reflectarrays and describing shortcomings of the approach
+        \item microstrip reflectarrays: microstrip is a printed patch, reflection antenna is a radio lens, antenna arrays are periodic pattern of antennas, that use wave phase shift to form beams
+        \item validation: the results of reflectarray analysis are compared to the experiments (several antennas are built)
+        \item the design and application are actually complex, as it requires accuracy in both solving the model and accuracy in materials and manufacturing
+        \item Reading 2: positive
+        \item The approach is designed to be adapted to several methods of feeding
+        \item The article is of high-quality: presents the (too) technical part, approach to applied design and verification in one concise package.
+        \item Features problems with different configurations: rectangular shape, for example, causes disturbance in electric field density, but collects more radiation from the feed, thus increasing spillover efficiency.
+        \item Phase errors: phase shift of patches is sensitive to accuracy as the dependency between the patch size and phase is really small; non-calibrated feed and substract choice can also introduce random phase errors.
+        \item Detailed description of experiments, a lot of explanations on causes of errors, but no mention of how measurements are done and their shortcomings (their accuracy and precision, number of experiment samples).
+        \item The method presented can also predict radiation pattern of the antenna, which is also compared and pretty well match the experiment data.
+        \item The authors admit that there are some things that they cannot explain, plus for honesty ("We are unable to explain the relatively high sidelobe levels for the reflector antenna, or the slightly low value of measured gain").
+        \item Reading 3: negative
+        \item There is no novelty: the authors already discussed (in a slightly more high-level manner) the idea behind the reflectarrays analysis and design in their previous papers (\cite{targonski.pozar_1994jun,pozar.metzler_1993apr}).
+        \item Not mentioned: how big the reflectarray can be depending on the frequency; it seems to me, that for some frequencies and speeds of frequency modulation, wave would be a complete unsynchronized mess on output aperture.
+        \item The images of reflectarrays are terrible, it is not possible to see anything (probably the images in the original publication were okay, but this is what we got in the available version).
+        \item Doesn't give any numerical comparison to the state of the art, nor classical antennas.
+        \item At the same time authors present the results like a justification for reflectarray feasibility, which is dishonest without direct comparison (it is possible that I am as an non-expert cannot understand the parameters, thus this point actually can be flawed).
+        \item The results thought support the claims that it is possible to create a reflectarray
+    \end{enumerate}
+
+    Technical:
+    \begin{enumerate}
+        \item Reflectarray is a substitution for parabolic antenna.
+        \item Because it is flat and the output beam direction is controllable by the pattern on it, it is more flexible.
+        \item Array part of the name is explained by the same working principle of beam forming as the phase arrays: by delaying the same signal in an array, the output waves from each component of such array, constructively resonate in a chosen direction, destructively resonating in others.
+        \item This creates a planar beam.
+        \item To see it another way: the reflectarray pattern essentially performs distance compensation for the input wave.
+        \item This way changes in wave, like frequency modulation, which is used to transmit information, are observed uniformly at the aperture of the antenna.
     \end{enumerate}
     \bibliographystyle{plain}
     \bibliography{refs}
