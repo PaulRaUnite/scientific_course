@@ -119,7 +119,9 @@
         \item Yet, I think it is important to say that the equations described try to account for substrate characteristics and predict wave scattering, in order to lower losses.
     \end{enumerate}
 
-    Technical:
+    \section{Introduction}\label{sec:introduction}
+    \section{Technical}\label{sec:technical}
+
     \begin{enumerate}
         \item Reflectarray is a substitution for parabolic antenna.
         \item Because it is flat and the output beam direction is controllable by the pattern on it, it is more flexible.
@@ -130,32 +132,6 @@
         \item Often refers to something called "full-wave moment-method solution", but is never referenced.
         Maybe this is some foundational methods of electromagnetism, I don't know.
     \end{enumerate}
-
-    References:
-    \begin{enumerate}
-        \item self-citation: 6/15 references, seems to be not bad.
-        \item reflect array concept\cite{berry.etal_1963nov}.
-        This citation is actually the original publication featuring reflectarrays.
-        \item claim: "losses in a microstrip feed network in a large array at high frequencies are often unacceptable" citation 2 is unavailable in free access, so cannot check.
-        The claim makes sense in all antennas by the way, losses are unacceptable.
-        \item "stubs of variable length to control the reflection phase"~\cite{munson.etal_1987aug,huang_1991jun,chang.huang_1992}.
-        This is true, the papers do present what is claimed, yet the lastest is unavailable in free access.
-        \item "A better approach, and the one used for the present work, is to use printed dipoles or patches of variable size to control the phase"~\cite{pozar.metzler_1993apr,targonski.pozar_1994jun}.
-        First is not freely available.
-        \sout{I am not convinced what is that good about the new method.}
-        Bandwidth of the patched is not as restricted as for patches with stubs, the grid doesn't have to be triangular.
-        \item Feeling that the authors write the same things over and over again in their papers.
-        \item "The procedure is very similar to the analysis of radar cross section of a microstrip antenna to~\cite{pozar_1987jun} and the analysis of infinite arrays of microstrip elements"~\cite{harackiewicz_1990jan}, one reference is not available at all, not possible to find.
-        The claim matches the references' abstracts (body of the thesis is not available).
-        \item "Using the definitions in~\cite{balanis_1982}",  cannot check, unavailable.
-        \item "transformation from a plane wave field to a spherical wave, and is related to the radar cross section of a square plate~\cite{knott.etal_2004}" --- unvailable.
-        \item "surface wave loss for a single microstrip element on a low-dielectric constant substrate is typically less than 15\%"\cite{pozar_1985oct} --- don't see the claim in the reference.
-        From the fast reading of the results, it seems that losses can very greatly, from almost none, to 70\%.
-        \item "Some estimates suggest that the variation of loss tangent is approximately linear with frequency\cite{levine.etal_1989apr}" --- cannot find the claim, the conclusion and the data presented do not mention frequency modulation at all.
-        \item "circular waveguide-fed dielectric cap~\cite{syrigos_1987jun}" -- yeah, matches.
-    \end{enumerate}
-
-    Images:
     \begin{figure}
         \centering
         \begin{tikzpicture}
@@ -290,11 +266,33 @@
         \caption{Reflectarray}
         \label{fig:reflectarray}
     \end{figure}
-
-    \section{Introduction}\label{sec:introduction}
-    \section{Technical}\label{sec:technical}
     \section{Conclusion}\label{sec:conclusion}
 
+    \section{Quality}\label{sec:quality}
+
+    \subsection{References}\label{subsec:references}
+    \begin{enumerate}
+        \item self-citation: 6/15 references, seems to be not bad.
+        \item reflect array concept\cite{berry.etal_1963nov}.
+        This citation is actually the original publication featuring reflectarrays.
+        \item claim: "losses in a microstrip feed network in a large array at high frequencies are often unacceptable" citation 2 is unavailable in free access, so cannot check.
+        The claim makes sense in all antennas by the way, losses are unacceptable.
+        \item "stubs of variable length to control the reflection phase"~\cite{munson.etal_1987aug,huang_1991jun,chang.huang_1992}.
+        This is true, the papers do present what is claimed, yet the lastest is unavailable in free access.
+        \item "A better approach, and the one used for the present work, is to use printed dipoles or patches of variable size to control the phase"~\cite{pozar.metzler_1993apr,targonski.pozar_1994jun}.
+        First is not freely available.
+        \sout{I am not convinced what is that good about the new method.}
+        Bandwidth of the patched is not as restricted as for patches with stubs, the grid doesn't have to be triangular.
+        \item Feeling that the authors write the same things over and over again in their papers.
+        \item "The procedure is very similar to the analysis of radar cross section of a microstrip antenna to~\cite{pozar_1987jun} and the analysis of infinite arrays of microstrip elements"~\cite{harackiewicz_1990jan}, one reference is not available at all, not possible to find.
+        The claim matches the references' abstracts (body of the thesis is not available).
+        \item "Using the definitions in~\cite{balanis_1982}",  cannot check, unavailable.
+        \item "transformation from a plane wave field to a spherical wave, and is related to the radar cross section of a square plate~\cite{knott.etal_2004}" --- unvailable.
+        \item "surface wave loss for a single microstrip element on a low-dielectric constant substrate is typically less than 15\%"\cite{pozar_1985oct} --- don't see the claim in the reference.
+        From the fast reading of the results, it seems that losses can very greatly, from almost none, to 70\%.
+        \item "Some estimates suggest that the variation of loss tangent is approximately linear with frequency\cite{levine.etal_1989apr}" --- cannot find the claim, the conclusion and the data presented do not mention frequency modulation at all.
+        \item "circular waveguide-fed dielectric cap~\cite{syrigos_1987jun}" -- yeah, matches.
+    \end{enumerate}
     \bibliographystyle{plain}
     \bibliography{refs}
 \end{document}
